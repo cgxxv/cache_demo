@@ -1,0 +1,6 @@
+.vscode
+target
+log
+.DS_Store
+chat.db
+Cargo.lock

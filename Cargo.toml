@@ -1,0 +1,37 @@
+[package]
+name = "chat_demo"
+version = "0.1.0"
+authors = ["foo_stacker@yeah.net>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+warp = "0.3"
+tokio = {version = "1",features = ["macros","time","rt-multi-thread"]}
+log = "0.4"
+log4rs = "1.0.0"
+serde = {version = "1", features = ["derive"] }
+serde_json = "1"
+signal-hook = "0.3"
+http = "0.2"
+uuid = { version = "0.8", features = ["v4", "serde"]}
+# redis = { version = "0.21.0", features = ["tokio-comp", "aio", "connection-manager"] }
+chrono = "0.4.19"
+sha1 = { version = "0.6.0", features = ["std"] }
+parking_lot = { version = "0.11.1", features = ["serde"] }
+fxhash = "0.2.1"
+dashmap = { path = "./dashmap", features = ["serde"] }
+crossbeam-channel = "0.5.1"
+bytes = "1.0.1"
+pnet_datalink = "0.28.0"
+ipnetwork = "0.18.0"
+anyhow = "1.0.43"
+reqwest = { version = "0.11.4", features = ["json"] }
+rand = "0.8.4"
+
+[profile.release]
+lto = true
+opt-level = 3
+codegen-units = 1
+# debug = true
